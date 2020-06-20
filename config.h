@@ -104,7 +104,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
-	{ MODKEY|ShiftMask,		XK_q,		spawn,		SHCMD("killall picom") }, 
+	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("killall picom") }, 
 	{ MODKEY,         		XK_w,		spawn,		SHCMD("$BROWSER") }, 
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
 	{ MODKEY|ShiftMask,    		XK_a,		spawn,		SHCMD("pavucontrol") }, 
