@@ -43,6 +43,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #include "fibonacci.c"
+#include <X11/XF86keysym.h>
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -133,6 +134,16 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,         	XK_y,		spawn,		SHCMD("xrandr --output eDP-1 --auto --primary") }, 
 	{ MODKEY,         		XK_m,		spawn,		SHCMD("st -e ncmpcpp") }, 
 	{ MODKEY|ShiftMask,         	XK_m,		spawn,		SHCMD("spotify") }, 
+
+	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 10") },
+	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 10") },
+	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("playerctl prev") },
+	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("playerctl next") },
+	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("playerctl play-pause") },
+
 };
 
 
