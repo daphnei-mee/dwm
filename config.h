@@ -3,10 +3,10 @@
 /* appearance */
 static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 25;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 25;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 25;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 25;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 50;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 50;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 50;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 50;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -153,6 +153,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("killall picom") }, 
+	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -CGb") }, 
 	{ MODKEY,         		XK_w,		spawn,		SHCMD("$BROWSER") }, 
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
 	{ MODKEY|ShiftMask,    		XK_a,		spawn,		SHCMD("pavucontrol") }, 
