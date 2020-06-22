@@ -153,7 +153,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("killall picom") }, 
-	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom --backend xr_glx_hybrid -CGb") }, 
+	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -CGb") }, 
 	{ MODKEY,         		XK_w,		spawn,		SHCMD("$BROWSER") }, 
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
 	{ MODKEY|ShiftMask,    		XK_a,		spawn,		SHCMD("pavucontrol") }, 
