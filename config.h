@@ -159,8 +159,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,    		XK_a,		spawn,		SHCMD("pavucontrol") }, 
 	{ MODKEY,         		XK_n,		spawn,		SHCMD("st -e ranger") }, 
 	{ MODKEY|ShiftMask,         	XK_n,		spawn,		SHCMD("thunar") }, 
-	{ MODKEY|ControlMask|ShiftMask,         	XK_t,		spawn,		SHCMD("xrandr --output HDMI-1 --auto --primary --right-of eDP-1") }, 
-	{ MODKEY|ControlMask|ShiftMask,         	XK_y,		spawn,		SHCMD("xrandr --output eDP-1 --auto --primary") }, 
+	{ MODKEY|ShiftMask,         	XK_t,		spawn,		SHCMD("xrandr --output HDMI-1 --auto --primary --right-of eDP-1") }, 
+	{ MODKEY|ShiftMask,         	XK_y,		spawn,		SHCMD("xrandr --output eDP-1 --auto --primary") }, 
 	{ MODKEY,         		XK_m,		spawn,		SHCMD("st -e ncmpcpp") }, 
 	{ MODKEY|ShiftMask,         	XK_m,		spawn,		SHCMD("spotify") }, 
 
