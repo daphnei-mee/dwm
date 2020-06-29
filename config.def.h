@@ -52,6 +52,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 /*#include "fibonacci.c"*/
 #include <X11/XF86keysym.h>
 #include "vanitygaps.c"
+#include "shiftview.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -153,6 +154,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,       tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,      tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_h,           shiftview,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_l,           shiftview,      {.i = +1 } },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("killall picom") }, 
 	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -CGb") }, 
