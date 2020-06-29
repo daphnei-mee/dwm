@@ -146,7 +146,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	{ MODKEY,                       XK_space,       setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
-	{ MODKEY|ShiftMask,             XK_f,           togglefullscr,  {0} },
+	{ MODKEY,                       XK_f,           togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,           view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,           tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,       focusmon,       {.i = -1 } },
@@ -161,7 +161,7 @@ static Key keys[] = {
 	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -CGb") }, 
 	{ MODKEY,         		XK_w,		spawn,		SHCMD("$BROWSER") }, 
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
-	{ MODKEY|ShiftMask,    		XK_a,		spawn,		SHCMD("pavucontrol") }, 
+	{ MODKEY|ShiftMask,    		XK_s,		spawn,		SHCMD("pavucontrol") }, 
 	{ MODKEY,         		XK_n,		spawn,		SHCMD("st -e ranger") }, 
 	{ MODKEY|ShiftMask,         	XK_n,		spawn,		SHCMD("thunar") }, 
 	{ MODKEY|ControlMask|ShiftMask,         	XK_t,		spawn,		SHCMD("xrandr --output HDMI-1 --auto --primary --right-of eDP-1") }, 
