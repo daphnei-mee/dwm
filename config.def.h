@@ -161,7 +161,7 @@ static Key keys[] = {
 	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -CGb") }, 
 	{ MODKEY,         		XK_w,		spawn,		SHCMD("$BROWSER") }, 
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
-	{ MODKEY|ShiftMask,    		XK_s,		spawn,		SHCMD("pavucontrol") }, 
+	{ MODKEY|ShiftMask,    		XK_s,		spawn,		SHCMD("st -e pulsemixer") }, 
 	{ MODKEY,         		XK_n,		spawn,		SHCMD("st -e ranger") }, 
 	{ MODKEY|ShiftMask,         	XK_n,		spawn,		SHCMD("thunar") }, 
 	{ MODKEY|ControlMask|ShiftMask,         	XK_t,		spawn,		SHCMD("xrandr --output HDMI-1 --auto --primary --right-of eDP-1") }, 
