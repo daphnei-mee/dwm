@@ -3,6 +3,7 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const unsigned int gappih    = 50;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 50;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 50;       /* horiz outer gap between windows and screen edge */
@@ -38,10 +39,13 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Steam",    NULL,       NULL,       0,            0,           -1 },
+
+	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
+	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
+	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	/*{ "st",      NULL,     NULL,           0,         0,          1,          -1,        -1 },*/
+	{ "st",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ NULL,      NULL,     "Event Tester", 0,         1,          0,           1,        -1 }, /* xev */
 };
 
 /* layout(s) */
@@ -52,6 +56,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 /*#include "fibonacci.c"*/
 #include <X11/XF86keysym.h>
 #include "vanitygaps.c"
+#include "shiftview.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -145,7 +150,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		setlayout,	{.v = &layouts[7]} }, /* centeredfloatingmaster */
 	{ MODKEY,                       XK_space,       setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
-	{ MODKEY|ShiftMask,             XK_f,           togglefullscr,  {0} },
+	{ MODKEY,                       XK_f,           togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,           view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,           tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,       focusmon,       {.i = -1 } },
@@ -153,12 +158,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,       tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,      tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_BackSpace,   quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_h,           shiftview,      {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_l,           shiftview,      {.i = +1 } },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("killall picom") }, 
 	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -CGb") }, 
 	{ MODKEY,         		XK_w,		spawn,		SHCMD("$BROWSER") }, 
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
-	{ MODKEY|ShiftMask,    		XK_a,		spawn,		SHCMD("pavucontrol") }, 
+	{ MODKEY|ShiftMask,    		XK_s,		spawn,		SHCMD("st -e pulsemixer") }, 
 	{ MODKEY,         		XK_n,		spawn,		SHCMD("st -e ranger") }, 
 	{ MODKEY|ShiftMask,         	XK_n,		spawn,		SHCMD("thunar") }, 
 	{ MODKEY|ControlMask|ShiftMask,         	XK_t,		spawn,		SHCMD("xrandr --output HDMI-1 --auto --primary --right-of eDP-1") }, 
