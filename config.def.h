@@ -167,12 +167,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
 	{ MODKEY|ShiftMask,    		XK_s,		spawn,		SHCMD("st -e pulsemixer") }, 
 	{ MODKEY,         		XK_n,		spawn,		SHCMD("st -e ranger") }, 
-	{ MODKEY|ShiftMask,         	XK_n,		spawn,		SHCMD("thunar") }, 
+	{ MODKEY|ShiftMask,         	XK_n,		spawn,		SHCMD("nemo") }, 
 	{ MODKEY|ControlMask|ShiftMask,         	XK_t,		spawn,		SHCMD("xrandr --output HDMI-1 --auto --primary --right-of eDP-1") }, 
 	{ MODKEY|ControlMask|ShiftMask,         	XK_y,		spawn,		SHCMD("xrandr --output eDP-1 --auto --primary") }, 
 	{ MODKEY|ControlMask|ShiftMask,         	XK_u,		spawn,		SHCMD("xrandr --auto") }, 
 	{ MODKEY,         		XK_m,		spawn,		SHCMD("st -e ncmpcpp") }, 
 	{ MODKEY|ShiftMask,         	XK_m,		spawn,		SHCMD("spotify") }, 
+
+	{ MODKEY|ShiftMask,         	XK_c,		spawn,		SHCMD("killall dunst") }, 
+	{ MODKEY,	         	XK_c,		spawn,		SHCMD("dunst") }, 
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
