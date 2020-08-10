@@ -174,8 +174,8 @@ static Key keys[] = {
 	{ MODKEY,         		XK_m,		spawn,		SHCMD("st -e ncmpcpp") }, 
 	{ MODKEY|ShiftMask,         	XK_m,		spawn,		SHCMD("spotify") }, 
 
-	{ MODKEY|ShiftMask,         	XK_c,		spawn,		SHCMD("killall dunst") }, 
-	{ MODKEY,	         	XK_c,		spawn,		SHCMD("dunst") }, 
+	{ MODKEY|ShiftMask,         	XK_c,		spawn,		SHCMD("notify-send DUNST_COMMAND_PAUSE") }, 
+	{ MODKEY,	         	XK_c,		spawn,		SHCMD("notify-send DUNST_COMMAND_RESUME") }, 
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
