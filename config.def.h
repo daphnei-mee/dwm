@@ -185,6 +185,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioPrev,		spawn,		SHCMD("playerctl prev") },
 	{ 0, XF86XK_AudioNext,		spawn,		SHCMD("playerctl next") },
 	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("playerctl play-pause") },
+	{ MODKEY,         		XK_g,		spawn,		SHCMD("imwheel -b 45") }, 
 
 };
 
