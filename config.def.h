@@ -187,6 +187,8 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioPlay,		spawn,		SHCMD("playerctl play-pause") },
 	{ MODKEY,         		XK_g,		spawn,		SHCMD("imwheel -b 45") }, 
 	{ MODKEY|ShiftMask,         	XK_d,		spawn,		SHCMD("discord") }, 
+	{ MODKEY|ShiftMask,         	XK_v,		spawn,		SHCMD("killall xss-lock") }, 
+	{ MODKEY,         		XK_v,		spawn,		SHCMD("xss-lock -- slock") }, 
 
 
 };
