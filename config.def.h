@@ -162,7 +162,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_l,           shiftview,      {.i = +1 } },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
 	{ MODKEY|ShiftMask,		XK_p,		spawn,		SHCMD("killall picom") }, 
-	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -CGb") }, 
+	{ MODKEY,		        XK_p,		spawn,		SHCMD("picom -b") }, 
 	{ MODKEY,         		XK_w,		spawn,		SHCMD("$BROWSER") }, 
 	{ MODKEY|ShiftMask,         	XK_w,		spawn,		SHCMD("torbrowser-launcher") }, 
 	{ MODKEY|ShiftMask,    		XK_s,		spawn,		SHCMD("st -e pulsemixer") }, 
